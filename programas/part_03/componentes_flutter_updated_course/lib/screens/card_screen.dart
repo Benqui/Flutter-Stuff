@@ -16,9 +16,33 @@ class CardScreen extends StatelessWidget {
           children: const [
             CustomCard1(),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
-            CustomCard2(),
+            CustomCard2(
+              imageUrl: 'https://wallpaperaccess.com/full/722917.jpg',
+              name: 'Super Ido Tu hermana',
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            CustomCard2(
+              imageUrl: 'https://wallpapercave.com/wp/wp9612618.jpg',
+              name: 'Melelepipi',
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            CustomCard2(
+              imageUrl: 'https://wallpapercave.com/wp/wp5406518.jpg',
+              name: 'John Xina',
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            CustomCard2(
+              imageUrl:
+                  'https://areajugones.sport.es/wp-content/uploads/2020/03/steve-carell-the-office.jpg',
+            ),
           ],
         ));
   }
