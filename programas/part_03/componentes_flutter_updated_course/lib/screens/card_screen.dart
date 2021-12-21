@@ -20,7 +20,7 @@ class CardScreen extends StatelessWidget {
             ),
             CustomCard2(
               imageUrl: 'https://wallpaperaccess.com/full/722917.jpg',
-              name: 'Super Ido Tu hermana',
+              name: 'Super Idol Tu hermana',
             ),
             SizedBox(
               height: 20,
