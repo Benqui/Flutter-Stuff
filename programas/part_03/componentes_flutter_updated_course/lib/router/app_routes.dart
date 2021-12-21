@@ -7,11 +7,11 @@ class AppRoutes {
 
   static final menuOptions = <MenuOption>[
     // TODO: borrar home
-    MenuOption(
-        route: 'home',
-        screen: HomeScreen(),
-        name: 'Home Screen',
-        icon: Icons.home_sharp),
+    // MenuOption(
+    //     route: 'home',
+    //     screen: HomeScreen(),
+    //     name: 'Home Screen',
+    //     icon: Icons.home_sharp),
     MenuOption(
         route: 'list1',
         screen: ListView1Screen(),
@@ -37,10 +37,17 @@ class AppRoutes {
         screen: AvatarScreen(),
         name: 'Avatar Screen',
         icon: Icons.supervised_user_circle_outlined),
+    MenuOption(
+        route: 'animation',
+        screen: AnimationScreen(),
+        name: 'Animation Screen',
+        icon: Icons.play_circle_filled_outlined),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
+
+    appRoutes.addAll({'home': (BuildContext context) => HomeScreen()});
 
     for (final option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
