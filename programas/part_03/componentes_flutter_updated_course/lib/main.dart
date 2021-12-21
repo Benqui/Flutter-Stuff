@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:componentes_flutter_updated_course/screens/listview2_screen.dart';
+import 'package:componentes_flutter_updated_course/themes/app_theme.dart';
+import 'package:componentes_flutter_updated_course/router/app_routes.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Scaffold(body: ListView2Screen()),
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
+      onGenerateRoute: (settings) => AppRoutes.onGenerateRoute(settings),
+      theme: AppTheme.lightTheme,
     );
   }
 }
