@@ -52,6 +52,11 @@ class AppRoutes {
         screen: SliderScreen(),
         name: 'Slider Screen',
         icon: Icons.slideshow_rounded),
+    MenuOption(
+        route: 'lv-builder',
+        screen: ListViewBuilderScreen(),
+        name: 'Listview Builder Screen',
+        icon: Icons.slideshow_rounded),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
