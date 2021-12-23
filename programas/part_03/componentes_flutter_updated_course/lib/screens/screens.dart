@@ -6,3 +6,4 @@ export 'package:componentes_flutter_updated_course/screens/listview2_screen.dart
 export 'package:componentes_flutter_updated_course/screens/avatar_screen.dart';
 export 'package:componentes_flutter_updated_course/screens/animated_screen.dart';
 export 'package:componentes_flutter_updated_course/screens/intput_screens.dart';
+export 'package:componentes_flutter_updated_course/screens/slider_screen.dart';
