@@ -1,32 +1,91 @@
 import 'package:flutter/material.dart';
+import 'package:peliculas_app/models/models.dart';
 
-class MovieSlider extends StatelessWidget {
-  const MovieSlider({Key? key}) : super(key: key);
+class MovieSlider extends StatefulWidget {
+  final List<Movie> movies;
+  final String? title;
+
+  final Function onNextPage;
+
+  const MovieSlider({
+    Key? key,
+    required this.movies,
+    required this.onNextPage,
+    this.title,
+  }) : super(key: key);
+
+  @override
+  State<MovieSlider> createState() => _MovieSliderState();
+}
+
+class _MovieSliderState extends State<MovieSlider> {
+  final ScrollController scrollControl = ScrollController();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    scrollControl.addListener(() {
+      if (scrollControl.position.pixels >=
+          scrollControl.position.maxScrollExtent - 500) {
+        widget.onNextPage();
+      }
+      // print(scrollControl.position.pixels);
+      // print(scrollControl.position.maxScrollExtent);
+    });
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    if (widget.movies.isEmpty) {
+      // if (true) {
+      return SizedBox(
+        width: double.infinity,
+        height: 280,
+        child: Center(
+          child: Column(
+            children: const [
+              CircularProgressIndicator(),
+              SizedBox(height: 5),
+              Text(
+                'Loading',
+                textAlign: TextAlign.center,
+              )
+            ],
+          ),
+        ),
+      );
+    }
+
+    return SizedBox(
       width: double.infinity,
       height: 280,
       // color: Colors.lightGreenAccent,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              'Populares',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          if (widget.title != null)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                widget.title!,
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
           const SizedBox(
             height: 5,
           ),
           Expanded(
             child: ListView.builder(
+              controller: scrollControl,
               scrollDirection: Axis.horizontal,
-              itemCount: 20,
-              itemBuilder: (_, index) => const _MoviePoster(),
+              itemCount: widget.movies.length,
+              itemBuilder: (_, index) => _MoviePoster(widget.movies[index]),
             ),
           )
         ],
@@ -36,9 +95,8 @@ class MovieSlider extends StatelessWidget {
 }
 
 class _MoviePoster extends StatelessWidget {
-  const _MoviePoster({
-    Key? key,
-  }) : super(key: key);
+  final Movie movie;
+  const _MoviePoster(this.movie);
 
   @override
   Widget build(BuildContext context) {
@@ -50,13 +108,13 @@ class _MoviePoster extends StatelessWidget {
       child: Column(
         children: [
           GestureDetector(
-            onTap: () => Navigator.pushNamed(context, 'details',
-                arguments: 'movie-instance'),
+            onTap: () =>
+                Navigator.pushNamed(context, 'details', arguments: movie),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(35),
-              child: const FadeInImage(
-                placeholder: AssetImage('assets/no-image.jpg'),
-                image: NetworkImage('https://via.placeholder.com/300x400'),
+              child: FadeInImage(
+                placeholder: const AssetImage('assets/no-image.jpg'),
+                image: NetworkImage(movie.fullPosterImg),
                 width: 130,
                 height: 175,
                 fit: BoxFit.contain,
@@ -66,8 +124,8 @@ class _MoviePoster extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          const Text(
-            'Ea laboris enim occaecat ullamco pariatur velit ex Lorem minim aliqua consequat veniam quis.',
+          Text(
+            movie.title,
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
             textAlign: TextAlign.center,
