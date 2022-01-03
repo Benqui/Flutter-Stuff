@@ -54,7 +54,37 @@ class MovieSearchDelegate extends SearchDelegate {
             ),
           );
         }
-        return Container();
+        final movies = snapshot.data;
+        return ListView.builder(
+          itemCount: movies!.length,
+          itemBuilder: (context, index) => _MovieItem(movie: movies[index]),
+        );
+      },
+    );
+  }
+}
+
+class _MovieItem extends StatelessWidget {
+  final Movie movie;
+  const _MovieItem({Key? key, required this.movie}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    movie.heroId = 'search-${movie.id}';
+    return ListTile(
+      leading: Hero(
+        tag: movie.heroId!,
+        child: FadeInImage(
+          placeholder: AssetImage('assets/no-image.jpg'),
+          image: NetworkImage(movie.fullPosterImg),
+          width: 50,
+          fit: BoxFit.contain,
+        ),
+      ),
+      title: Text(movie.title),
+      subtitle: Text(movie.originalTitle),
+      onTap: () {
+        Navigator.pushNamed(context, 'details', arguments: movie);
       },
     );
   }

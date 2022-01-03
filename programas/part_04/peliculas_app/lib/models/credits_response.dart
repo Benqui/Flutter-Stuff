@@ -81,7 +81,7 @@ class Cast {
         adult: json["adult"],
         gender: json["gender"],
         id: json["id"],
-        knownForDepartment: json["known_for_department"],
+        knownForDepartment: json["known_for_department"].toString(),
         name: json["name"],
         originalName: json["original_name"],
         popularity: json["popularity"].toDouble(),
