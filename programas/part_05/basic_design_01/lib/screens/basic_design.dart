@@ -11,7 +11,11 @@ class BasicDesignScreen extends StatelessWidget {
           Image(image: AssetImage("assets/landscape.jpg")),
           SizedBox(height: 10),
           Title(),
-          ButtonSection()
+          ButtonSection(),
+          Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Text(
+                  'Veniam aute nostrud qui ipsum ad ea voluptate eu esst quis eu pariatur pariatur cillum ea laboris exercitation aliqua. Ipsum nostrud ad in amet magna laboris quis dolore dolor. Excepteur eiusmod elit tempor pariatur esse laboris aute exercitation nisi irure. Ea exercitation sint fugiat nostrud ea velit eu qui ad laborum.'))
         ],
       ),
     );
