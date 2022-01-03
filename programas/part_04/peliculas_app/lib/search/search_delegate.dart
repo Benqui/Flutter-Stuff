@@ -41,6 +41,7 @@ class MovieSearchDelegate extends SearchDelegate {
         ),
       );
     }
+      
     final moviesProvider = Provider.of<MoviesProvider>(context, listen: false);
     return FutureBuilder(
       future: moviesProvider.searchMovie(query),
