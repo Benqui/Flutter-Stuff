@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:productos_app/models/models.dart';
 import 'package:productos_app/screens/screens.dart';
 import 'package:productos_app/services/services.dart';
 import 'package:productos_app/widgets/widgets.dart';
@@ -27,12 +28,20 @@ class HomeScreen extends StatelessWidget {
           child: ProductCard(
             product: productsService.products[i],
           ),
-          onTap: () => Navigator.pushNamed(context, ProductsScreen.routeName),
+          onTap: () {
+            productsService.selectedProduct =
+                productsService.products[i].copy();
+            Navigator.pushNamed(context, ProductsScreen.routeName);
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          productsService.selectedProduct =
+              Product(available: false, price: 0.0, name: '');
+          Navigator.pushNamed(context, ProductsScreen.routeName);
+        },
       ),
     );
   }

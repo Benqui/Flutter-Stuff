@@ -19,7 +19,9 @@ class ProductCard extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomLeft,
           children: [
-            _BackgroundImage(),
+            _BackgroundImage(
+              url: product.picture,
+            ),
             _ProducDetails(
               product: product,
             ),
@@ -31,7 +33,8 @@ class ProductCard extends StatelessWidget {
                 )),
 
             //todo:mostrar de manera condicional
-            Positioned(left: 0, top: 0, child: _NotAvailable()),
+            if (!product.available)
+              Positioned(left: 0, top: 0, child: _NotAvailable()),
           ],
         ),
       ),
@@ -53,8 +56,10 @@ class ProductCard extends StatelessWidget {
 }
 
 class _BackgroundImage extends StatelessWidget {
+  final String? url;
   const _BackgroundImage({
     Key? key,
+    this.url,
   }) : super(key: key);
 
   @override
@@ -64,11 +69,18 @@ class _BackgroundImage extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: 400,
-        child: FadeInImage(
-          placeholder: AssetImage('assets/jar-loading.gif'),
-          image: NetworkImage('https://via.placeholder.com/400x300/f6f6f6'),
-          fit: BoxFit.cover,
-        ),
+        //todo: fix productos cuando no hay imagen que onda
+
+        child: url == null
+            ? const Image(
+                image: AssetImage('assets/no-image.png'),
+                fit: BoxFit.cover,
+              )
+            : FadeInImage(
+                placeholder: const AssetImage('assets/jar-loading.gif'),
+                image: NetworkImage(url!),
+                fit: BoxFit.cover,
+              ),
       ),
     );
   }
