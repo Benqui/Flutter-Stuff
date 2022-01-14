@@ -96,7 +96,7 @@ class ProductsService extends ChangeNotifier {
   }
 
   void updateSelectedProductImage(String path) {
-    selectedProduct!.picture = path;
+    if (!path.startsWith('http')) selectedProduct!.picture = path;
     newPictureFile = File.fromUri(Uri(path: path));
 
     notifyListeners();
@@ -108,10 +108,11 @@ class ProductsService extends ChangeNotifier {
     notifyListeners();
 
     final url = Uri.parse(
-        'https://api.cloudinary.com/v1_1/benqui/image/upload?upload_preset=productsMark1');
+        'https://api.cloudinary.com/v1_1/benqui/image/upload?upload_preset=flutter-products');
     final imageUploadRequest = http.MultipartRequest('POST', url);
     final file =
         await http.MultipartFile.fromPath('file', newPictureFile!.path);
+
     imageUploadRequest.files.add(file);
     final streamResponse = await imageUploadRequest.send();
     final resp = await http.Response.fromStream(streamResponse);
@@ -121,13 +122,13 @@ class ProductsService extends ChangeNotifier {
       print(resp.body);
       return null;
     }
-
-    newPictureFile = null;
+    newPictureFile =
+        null; // Ya lo subi ya no necesito de esta propiedad por ahora
 
     final decodedData = json.decode(resp.body);
     return decodedData['secure_url'];
-    // print(resp.body);
 
+    // print(resp.body);
     // return '';
   }
 }

@@ -45,9 +45,11 @@ class ProductImage extends StatelessWidget {
       );
     }
     if (picture.startsWith('http')) {
-      FadeInImage(
+      // print('True');
+      return FadeInImage(
         placeholder: const AssetImage('assets/jar-loading.gif'),
         image: NetworkImage(url!),
+        // image: NetworkImage(picture),
         fit: BoxFit.cover,
       );
     }

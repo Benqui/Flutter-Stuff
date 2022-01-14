@@ -64,17 +64,21 @@ class _ProductsScreenBody extends StatelessWidget {
                       //todo: camara o galeria
                       final picker = ImagePicker();
                       final XFile? pickedFile = await picker.pickImage(
-                          source: ImageSource.camera, imageQuality: 100);
+                        source: ImageSource.camera,
+                        // imageQuality: 100,
+                      );
 
                       if (pickedFile == null) {
-                        // print('no selecciono nada ');
+                        print('no selecciono nada ');
                         return;
                       }
                       // final String? imageUrl =
                       //     await productsService.uploadImage();
-                      // print('tenemos nudes (imagen) ${pickedFile.path}');
+                      print('tenemos nudes (imagen) ${pickedFile.path}');
                       productsService
                           .updateSelectedProductImage(pickedFile.path);
+                      // productsService
+                      //     .updateSelectedProductImage(pickedFile.path);
                     },
                   ),
                 ),
@@ -86,21 +90,29 @@ class _ProductsScreenBody extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.save_outlined,
-          size: 30,
-        ),
-        onPressed: () async {
-          if (!productFormProvider.isValidForm()) return;
-          final String? imageUrl = await productsService.uploadimage();
-          print(imageUrl);
-          if (imageUrl != null) {
-            productFormProvider.product.picture = imageUrl;
-          }
-          await productsService
-              .saveAllCreataProduct(productFormProvider.product);
-          // Navigator.pop(context);
-        },
+        child: productsService.isSaving
+            ? const CircularProgressIndicator(color: Colors.white)
+            : const Icon(
+                Icons.save_outlined,
+                size: 30,
+              ),
+        onPressed: productsService.isSaving
+            ? null
+            : () async {
+                if (!productFormProvider.isValidForm()) return;
+                final String? imageUrl = await productsService.uploadimage();
+                print(imageUrl);
+                if (imageUrl != null) {
+                  productFormProvider.product.picture = imageUrl;
+                }
+
+                //* *La funcion de guardado del producto NO BORRAR
+                await productsService
+                    .saveAllCreataProduct(productFormProvider.product);
+
+                //TODO: cuando todo jale bien shilo habilitar esta madre
+                // Navigator.pop(context);
+              },
       ),
     );
   }
@@ -185,6 +197,3 @@ class _ProductForm extends StatelessWidget {
             )
           ]);
 }
-
-
-//FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
