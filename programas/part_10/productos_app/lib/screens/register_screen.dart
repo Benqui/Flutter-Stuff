@@ -6,10 +6,10 @@ import 'package:productos_app/ui/input_decoration.dart';
 import 'package:productos_app/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
-  static const String routeName = 'login';
+class RegisterScreen extends StatelessWidget {
+  static const String routeName = 'register';
 
-  const LoginScreen({Key? key}) : super(key: key);
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: 10),
                   Text(
-                    'Login',
+                    'Crear una nueva cuenta',
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   SizedBox(height: 30),
@@ -39,11 +39,10 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 50),
             TextButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(
-                    context, RegisterScreen.routeName);
+                Navigator.pushReplacementNamed(context, LoginScreen.routeName);
               },
-              child: const Text(
-                'Crear una nueva cuenta',
+              child: Text(
+                'Ya tienes una cuenta??',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
@@ -124,21 +123,7 @@ class _LoginForm extends StatelessWidget {
               onPressed: loginForm.isLoading
                   ? null
                   : () async {
-                      /* // FocusScope.of(context).unfocus();
-
-                      // if (!loginForm.isValidForm()) {
-                      //   return;
-                      // }
-                      // loginForm.isLoading = true;
-                      // await Future.delayed(Duration(seconds: 2));
-
-                      //todo:validar que el login es correcto
-
-                      // loginForm.isLoading = false;
-                      // Navigator.pushReplacementNamed(
-                      //     context, HomeScreen.routeName);
                       FocusScope.of(context).unfocus();
-                      */
 
                       final authService =
                           Provider.of<AuthService>(context, listen: false);
@@ -148,7 +133,7 @@ class _LoginForm extends StatelessWidget {
                       }
                       loginForm.isLoading = true;
                       // await Future.delayed(Duration(seconds: 2));
-                      final String? errorMessage = await authService.login(
+                      final String? errorMessage = await authService.createUser(
                           loginForm.email, loginForm.password);
 
                       if (errorMessage == null) {
@@ -158,8 +143,14 @@ class _LoginForm extends StatelessWidget {
                         //Todo: mostrar el error de pantalla
                         // print(errorMessage);
                         NotificationsService.showSnackbar(errorMessage);
+
                         loginForm.isLoading = false;
                       }
+
+                      // loginForm.isLoading = false;
+
+                      // Navigator.pushReplacementNamed(
+                      //     context, HomeScreen.routeName);
                     },
             )
           ],

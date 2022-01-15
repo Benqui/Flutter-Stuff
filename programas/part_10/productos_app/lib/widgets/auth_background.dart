@@ -33,7 +33,7 @@ class _HeaderIcon extends StatelessWidget {
         width: double.infinity,
         margin: const EdgeInsets.only(top: 30),
         child: const Icon(
-          Icons.person_pin,
+          Icons.person_pin_circle_outlined,
           color: Colors.white,
           size: 100,
         ),
