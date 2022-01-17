@@ -46,3 +46,4 @@ app.*.map.json
 /android/app/release
 
 pubspec.lock
+lib/services/push_notification_service.dart

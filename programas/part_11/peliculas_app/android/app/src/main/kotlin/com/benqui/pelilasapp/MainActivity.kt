@@ -1,4 +1,4 @@
-package com.benqui.peliculasapp
+package com.benqui.pelilasapp
 
 import io.flutter.embedding.android.FlutterActivity
 
