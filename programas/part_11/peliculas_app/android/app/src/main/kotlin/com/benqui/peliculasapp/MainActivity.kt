@@ -1,4 +1,4 @@
-package com.example.notifications_proyect
+package com.benqui.peliculasapp
 
 import io.flutter.embedding.android.FlutterActivity
 

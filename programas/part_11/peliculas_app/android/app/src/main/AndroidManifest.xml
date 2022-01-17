@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.benqui.flutter.peliculasapp">
+    package="com.benqui.peliculasapp">
    <application
         android:label="Peliculas App"
         android:name="${applicationName}"
