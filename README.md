@@ -5,18 +5,19 @@ My flutter learning path
 
 Tienes que considerar el software necesario para correr estos programas:
 * [Vs Code](https://code.visualstudio.com/download "Download VSCode")
-* [Aun que yo recomiendo instalar Flutter que ya viene con dart](https://flutter.dev/?gclsrc=aw.ds "Flutter")
 * [Git](https://git-scm.com/downloads "Git")
+* [Flutter](https://flutter.dev/?gclsrc=aw.ds "Flutter")
 * [Android studio](https://developer.android.com/studio?hl=es-419&gclsrc=aw.ds&gclid=Cj0KCQiA47GNBhDrARIsAKfZ2rDVTAXOaWGk7I-lYyohsZesdZfgwY9-eIetRjKlcCxYqnn8iMRKKDsaAo90EALw_wcB "Adroid Studio")
+
+
+## [Parte 01: Creacion de proyecto](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_01/i_creacion_de_proyecto "Parte 01")
+En esta parte vemos como crear un proyecto en flutter y como correrlo
 
 ### Como crear un proyecto de flutter en VsCode:
 Tenemos que abrir una nueva ventana de Visual Studio Code y tecleamos:  ```Ctrl + Shif + P ```  
 
 ### Como correr codigo de flutter en VsCode
 
-
-## [Parte 01: Creacion de proyecto](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_01/i_creacion_de_proyecto "Parte 01")
-En esta parte vemos como crear un proyecto en flutter y como correrlo
 
 
 ## [Parte 02: Hola mundo y contador](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_02/hola_mundo_y_contador "Parte 02")
