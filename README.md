@@ -15,109 +15,53 @@ Tenemos que abrir una nueva ventana de Visual Studio Code y tecleamos:  ```Ctrl 
 ### Como correr codigo de flutter en VsCode
 
 
-## [Parte 01](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_01 "Parte 01")
-En esta parte vemos el hola mundo y el tipo de datos que usaremos en Dart
-
-El contenido es:
-1. Hola mundo
-2. Tipo de datos: Numeros
-3. Tipo de datos: Strings / Cadenas
-4. Tipo de datos: Booleanos / Booleans
-5. Tipo de datos: Listas o vectores
-6. Tipo de datos: Sets
-7. Tipo de datos: Mapas o Diccionarios
-
-## [Parte 02](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_02 "Parte 02")
-En esta parte vemos lo que son las variables, los comentatios y los operadores
-
-El contenido es:
-1. Variables constantes y finales
-2. Palabra reservada "late"
-3. Operadores Aritmeticos
-4. Operacion de asignacion, condicional, relacional y de tipo
-5. Operadores relacionales y por tipos
-
-## [Parte 03](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_03 "Parte 03")
-En esta parte vemos el control de flujo
+## [Parte 01: Creacion de proyecto](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_01/i_creacion_de_proyecto "Parte 01")
+En esta parte vemos como crear un proyecto en flutter y como correrlo
 
 
-El contenido es:
-1. Input de usuario
-2. If y else
-3. Ciclo for
-4. For in
-5. Ciclo while
-6. Ciclo Do-While
-7. Break y continue
-8. Ciclo for con etiquetas
-9. Switch
-
-## [Parte 04](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_04 "Parte 04")
-Aqui vemos funciones en Dart
-
-El contenido es:
-1. Funciones basicas
-2. Argumentos posicionales
-3. Argumetos por nombre
-4. Argumentos por valor y referencia
-5. Funciones lambda o de flecha
-6. Callbacks
-
-## [Parte 05](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_05 "Parte 05")
-Aqui vemos tipos no tan comunes en dart
-
-El contenido es:
-1. Queues o Colas
-2. Enum o Enumeraciones
-3. Futures
-4. Futures parte 2
-5. Async - Await
-6. Catch error
-7. Streams
-8. Streams onError, onDone y cancelOnError
-9. Streams tipados y Broadcast
-
-## [Parte 06](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_06 "Parte 06")
-Aquie lo que vemos son Clases en Dart
-
-El contenido es:
-1. Estructura de una clase 
-2. Clases en archivos independientes
-3. Propiedades privadas
-4. Gets y Sets
-5. Constructores Basicos
-6. Constructores con nombre
-7. Propiedades finales
-8. Constructores constantes
-9. Constructores Factory
-10. Propiedades y metodos estaticos
-11. Patron singleton
-
-## [Parte 07](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_07 "Parte 07")
-Aqui vemos lo que es la herencia de las clases 
-
-El contenido es:
-1. Extends
-2. Clase abstract
-3. Super constructor
-4. Override
-5. Mixins
-
-## [Parte 08](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_08 "Parte 08")
-Documentacion y detalles en dart
+## [Parte 02: Hola mundo y contador](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_02/hola_mundo_y_contador "Parte 02")
+Es una aplicacion donde puedes aumentar, disminuir o reiniciar un contador 
 
 
-Aqui lo que quiero que quede claro es que se ven metodos y propiedades de los objetos pero usando la [documentacion oficial de dart](https://dart.dev/guides "Doc de dart")
-
-El contenido es:
-1. Doubles
-2. Strings
-3. Mapas
-
-## [Parte 09](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_09/paquetes "Parte 09")
-Ejemplo de un proyecto o aplicacion con paquetes 
+## [Parte 03](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_03/componentes_flutter_updated_course "Parte 03")
+Es una aplicacion con todos los componentes basicos que ofrece flutter
 
 
-## [Parte 10](https://github.com/Benqui/Dart-Stuff/tree/main/programs/part_10/trabajo_final/paises "Parte 10")
-Otro ejemplo de un proyecto o aplicacion con paquetes 
+
+## [Parte 04](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_04/peliculas_app "Parte 04")
+Es una aplicacion de consulta de informacion de peliculas que usa un REST API
+
+
+## [Parte 05](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_05/basic_design_01 "Parte 05")
+Este fue un ejercicio de creacion de 3 diferentes diseños para una aplicacion, el básico, el intermedio y un diseño mas avanzado
+
+
+## [Parte 06](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_06/qr_readrer_and_gps "Parte 06")
+Esta es una aplicacion que usa la camara de tu dispositivo movil que lee codigos QR para paginas web y coordenadas en google maps
+
+
+## [Parte 07](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_07/user_preferences_app "Parte 07")
+Este es un ejercicio para saber como guardar las preferencias de usuario y mantener los cambios aun cuando cerramos la aplicación
+
+
+## [Parte 08](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_08/productos_app "Parte 08")
+Esta es la primera parte de como crear una aplicacion de productos, empezamos con la creación del login
+
+
+## [Parte 09](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_09/productos_app "Parte 09")
+Esta es la segunda parte de como crear una aplicacion de productos, creamos la pagina de inicio de la aplicacion y la pagina de creacion y modificacion de productos
+
+todo esto guardando los cambios en una base de datos en firebase y guardamos las imagenes en cloudinary
+
+
+## [Parte 10](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_10/productos_app "Parte 10")
+Esta es la tercera y última parte de como crear una aplicacion de productos, que es el login y el manejo de tokens en la aplicacion con la ayuda de firebase
+
+
+## [Parte 11](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_11/peliculas_app "Parte 11")
+Aqui es la creacion de un icono y pagina de carga de la aplicacion propio 
+
+
+## [Parte 12](https://github.com/Benqui/Flutter-Stuff/tree/main/programas/part_12/notifications_proyect "Parte 12")
+Es un ejercicio de como hacer que una aplicacion funcione con notificaciones push
 
